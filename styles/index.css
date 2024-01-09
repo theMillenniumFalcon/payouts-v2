@@ -1,0 +1,550 @@
+:root {
+    --dukaan-blue-800: #1e2640;
+    --dukaan-blue-600: #0e4f82;
+    --dukaan-blue-400: #146eb4;
+  
+    --dukaan-gray-800: #4d4d4d;
+    --dukaan-gray-700: #3f3f46;
+    --dukaan-gray-600: #71717a;
+    --dukaan-gray-300: #ccc;
+    --dukaan-gray-200: #dfdddd;
+    --dukaan-gray-100: #f7f7f7;
+
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+@supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Inter, sans-serif;
+    background-color: white;
+}
+  
+.main {
+    display: flex;
+}
+  
+aside {
+    position: sticky;
+    inset: 0;
+    width: 224px;
+    background-color: var(--dukaan-blue-800);
+    height: 100dvh;
+    color: var(--dukaan-gray-300);
+}
+  
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+  
+.sidebar .user {
+    padding: 16px 16px 20px 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.user .user__info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+  
+.user__info .user__logo img {
+    border-radius: 4px;
+    height: 39px;
+    width: 39px;
+}
+
+.user__info .user__details {
+    height: 42px;
+    margin-left: 14px;
+}
+  
+.user__info .user__details .name {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: white;
+}
+  
+.user__info .user__details .store {
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--dukaan-gray-300);
+}
+  
+.user .user__details .store:hover {
+    font-size: 13px;
+    text-decoration: underline;
+    color: white;
+}
+
+.user .user__dropdown {
+    cursor: pointer;
+}
+  
+.menu {
+    padding: 8px;
+    list-style: none;
+    flex: 1;
+}
+  
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+  
+.menu-active {
+    background-color: #ffffff0d;
+    color: white;
+}
+  
+.menu-item:hover {
+    cursor: pointer;
+    background-color: #ffffff0d;
+}
+  
+.credits {
+    margin-top: auto;
+    margin-bottom: 20px;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 6px 16px;
+    display: flex;
+    gap: 12px;
+    background-color: #ffffff0d;
+    border-radius: 4px;
+    font-size: 14px;
+}
+  
+.credits__details {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+  
+.credits__details .balance {
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+}
+  
+.payouts {
+    flex: 1 1 0;
+    overflow: auto;
+}
+  
+.mobile-screen {
+    display: none;
+}
+  
+@media only screen and (max-width: 600px) {
+    /* aside {
+      width: 100vw;
+    } */
+  
+    .main {
+      display: none;
+    }
+  
+    .mobile-screen {
+      display: flex;
+      gap: 20px;
+      height: 100dvh;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 14px;
+    }
+  
+    .mobile-screen .desc {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+}
+  
+  /* Payouts Section */
+  
+.payouts {
+    background-color: var(--dukaan-gray-100);
+}
+  
+.header {
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-bottom: 1px solid var(--dukaan-gray-300);
+}
+  
+.header .header__heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+  
+.header .header__heading .heading__title {
+    font-size: 20px;
+    font-weight: 500;
+}
+  
+.header .header__heading .heading__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--dukaan-gray-600);
+    cursor: pointer;
+}
+  
+.header .header__search .search__box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    width: 400px;
+    border-radius: 8px;
+    background-color: var(--dukaan-gray-100);
+    color: var(--dukaan-gray-600);
+}
+  
+.header__search .search__box input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-family: Inter, sans-serif;
+    width: 100%;
+}
+  
+.header__search .search__box input::placeholder {
+    color: var(--dukaan-gray-600);
+}
+  
+.header .header__actions {
+    display: flex;
+    gap: 10px;
+}
+  
+.header .header__actions div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dukaan-gray-200);
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+    color: var(--dukaan-gray-700);
+}
+  
+.overview-wrapper {
+    padding: 32px;
+}
+  
+.overview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.overview .overview__title {
+    font-size: 20px;
+    font-weight: 500;
+}
+  
+.overview .overview__filter {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border: 1px solid var(--dukaan-gray-300);
+    border-radius: 4px;
+    background-color: white;
+    color: var(--dukaan-gray-700);
+}
+  
+.overview-cards {
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+  
+.cards__card {
+    padding: 24px 20px;
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: fit-content;
+    position: relative;
+}
+  
+.cards__card .card__header {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    color: var(--dukaan-gray-700);
+}
+  
+.cards__card .card__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.cards__card .card__body .amount {
+    font-size: 28px;
+    font-weight: 600;
+}
+  
+.transactions {
+    padding: 0px 32px;
+}
+  
+.transactions .transactions__title {
+    font-size: 20px;
+    font-weight: 500;
+}
+  
+.transactions .transactions__table {
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 6px;
+    padding: 8px 10px;
+}
+  
+.transactions .transactions__table .table__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.transactions__table .table__header .table__search {
+    padding: 6px 8px 6px 12px;
+    border: 1px solid var(--dukaan-gray-300);
+    border-radius: 4px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    width: 240px;
+    color: var(--dukaan-gray-600);
+}
+  
+.table__header .table__search input {
+    padding: 4px 0;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    outline: none;
+    border: none;
+    width: 100%;
+}
+  
+.table__header .table__search input::placeholder {
+    color: var(--dukaan-gray-600);
+}
+  
+.transactions__table .table__header .table__actions {
+    display: flex;
+    gap: 20px;
+}
+  
+.transactions__table .table__header .table__actions div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border: 1px solid var(--dukaan-gray-300);
+    border-radius: 4px;
+    background-color: white;
+    color: var(--dukaan-gray-700);
+}
+  
+.transactions__table .table-wrapper {
+    margin-top: 10px;
+    width: 100%;
+}
+  
+.transactions__table .table-wrapper table {
+    width: 100%;
+    font-size: 14px;
+    border-collapse: collapse;
+}
+  
+.table-wrapper table thead {
+    background-color: var(--dukaan-gray-100);
+    color: var(--dukaan-gray-600);
+    font-weight: 400;
+    text-align: left;
+}
+  
+.table-wrapper table thead tr th {
+    width: 246px;
+    padding: 14px 12px;
+    font-weight: 500;
+    color: var(--dukaan-gray-800);
+}
+ 
+.table-wrapper table thead th:last-child .svg {
+    border: 1px solid black;
+}
+
+.table-wrapper table thead th:last-child, table thead th:nth-last-child(2), 
+    table tbody td:last-child, table tbody td:nth-last-child(2) {
+    text-align: right;
+}
+  
+.table-wrapper table tbody tr {
+    border-bottom: 2px solid var(--dukaan-gray-100);
+}
+  
+.table-wrapper table tbody tr:last-child {
+    border: 0;
+}
+  
+.table-wrapper table tbody tr td {
+    padding: 14px 12px;
+}
+  
+.td-id {
+    color: var(--dukaan-blue-400);
+    font-weight: 500;
+}
+  
+.td-date {
+    font-weight: 500;
+    font-size: 14px;
+}
+  
+.td-amount, .td-fees {
+    color: var(--dukaan-gray-800);
+    font-weight: 500;
+    font-size: 14px;
+    text-align: right;
+}
+
+.pagination-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.pagination-component {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+    width: 610px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.pagination-component .previous, .next {
+    cursor: pointer;
+    width: auto;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px 6px 6px;
+    border: 1px solid var(--dukaan-gray-300);
+    border-radius: 4px;
+    background-color: white;
+    color: var(--dukaan-gray-700);
+}
+
+.previous .pagination-icon {
+    margin: 0px 8px;
+}
+
+.next .pagination-icon {
+    margin: 0px 8px;
+}
+
+.pagination-component .next {
+    padding: 6px 6px 6px 12px;
+}
+
+.pagination-component .page__numbers {
+    height: 28px;
+    width: 388px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.page__numbers .page__number-inactive, .page__number-burger, .page__number-active {
+    height: 100%;
+    padding: 2px 0px 2px 0px;
+    width: 28px;
+}
+
+.page__numbers .page__number-inactive, .page__number-active {
+    cursor: pointer;
+}
+
+.page__numbers .page__number-active {
+    background-color: var(--dukaan-blue-400);
+    border: 1px solid var(--dukaan-blue-400);
+    color: #ffffff;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+}
+
+  /* SVGS*/
+.svg-search-icon {
+    color: var(--dukaan-gray-600);
+    margin-top: 2px;
+}
+  
+.svg-hamburger-icon {
+    stroke-width: 2.5px;
+}
+  
+.svg-chevron-down-icon {
+    stroke-width: 3px;
+}
+  
+.svg-chevron-right-icon {
+    stroke-width: 4px;
+}
+  
+.svg-download-tray-icon {
+    height: 22px;
+    width: 22px;
+}
+  
