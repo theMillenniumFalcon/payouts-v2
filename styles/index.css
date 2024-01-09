@@ -336,7 +336,8 @@ aside {
 .transactions .transactions__table {
     margin-top: 20px;
     background-color: white;
-    border-radius: 6px;
+    border-radius: 8px;
+    margin-bottom: 40px;
     padding: 8px 10px;
 }
   
@@ -410,9 +411,9 @@ aside {
     font-weight: 500;
     color: var(--dukaan-gray-800);
 }
- 
-.table-wrapper table thead th:last-child .svg {
-    border: 1px solid black;
+
+.table-wrapper table thead th:last-child .transactions__fees_icon {
+    cursor: pointer;
 }
 
 .table-wrapper table thead th:last-child, table thead th:nth-last-child(2), 
